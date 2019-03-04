@@ -11,8 +11,16 @@ namespace C_Sharp_Intermediate
         static void Main(string[] args)
         {
 
+            //C# features that support LINQ:
 
-     
+            //Anonymous Types
+            //Extension Methods
+            //Implicit Typing
+            //Lambda Expressions
+            //Object and Collection Initializers
+
+
+
         }
     }
 }
