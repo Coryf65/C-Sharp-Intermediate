@@ -52,9 +52,25 @@ namespace C_Sharp_Intermediate
 
             // NOTE: LINQ uses deffered execution
 
+            
+
             #endregion
 
 
+        }
+
+        /// <summary>
+        ///  Challenge 1 returning values
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public IEnumerable<int> NumbersGreaterThanFive(List<int> list)
+        {
+            IEnumerable<int> lessThanFive;
+
+            lessThanFive = from n in list where n > 5 select n; 
+
+            return lessThanFive;
         }
     }
 }
