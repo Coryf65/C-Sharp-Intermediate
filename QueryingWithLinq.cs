@@ -42,7 +42,7 @@ namespace C_Sharp_Intermediate
 
             //display results
             Console.WriteLine("using the for each loop...");
-            Console.WriteLine("Nums > 10: " + numbersGreaterThanTen);
+            Console.WriteLine("Nums > 10: {0}", numbersGreaterThanTen);
             //result: { 16, 32, 64}
 
             //numsGreaterThan10Linq = from numbers where numbers > 10 select number;
@@ -52,7 +52,7 @@ namespace C_Sharp_Intermediate
 
             // Now using LINQ
             Console.WriteLine("using LINQ...");
-            Console.WriteLine("Nums > 10: " + linqResults);
+            Console.WriteLine("Nums > 10: {0}", linqResults);
 
             // NOTE: LINQ uses deffered execution
         }
