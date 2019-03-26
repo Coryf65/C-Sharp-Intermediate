@@ -42,7 +42,10 @@ namespace C_Sharp_Intermediate
 
             //display results
             Console.WriteLine("using the for each loop...");
-            Console.WriteLine("Nums > 10: {0}", numbersGreaterThanTen);
+
+            // found a way to print into console
+            //Console.WriteLine("Nums > 10: {0}", numbersGreaterThanTen);
+            numbersGreaterThanTen.ForEach(i => Console.Write("{0}\t", i));
             //result: { 16, 32, 64}
 
             //numsGreaterThan10Linq = from numbers where numbers > 10 select number;
@@ -51,10 +54,40 @@ namespace C_Sharp_Intermediate
             var linqResults = from n in numbers where n > 10 select n;
 
             // Now using LINQ
-            Console.WriteLine("using LINQ...");
-            Console.WriteLine("Nums > 10: {0}", linqResults);
+            Console.WriteLine("\n using LINQ...");
+            //Console.WriteLine("Nums > 10: {0}", linqResults);
+            Console.WriteLine(linqResults);
+
 
             // NOTE: LINQ uses deffered execution
+
+            // PART 2
+            Console.WriteLine("Starting part 2...");
+
+            List<Bird> birds = new List<Bird> {
+                new Bird { Name = "Cardinal", Color = "Red", Sightings = 3 },
+                new Bird { Name = "Dove", Color = "White", Sightings = 2 },
+                new Bird { Name = "Finch", Color = "yellow", Sightings = 10 }
+            };
+
+            // can add more using .Add Method
+            birds.Add(new Bird { Name = "Robin", Color = "Red", Sightings = 2 });
+
+            // or you could use the long version...
+            Bird blueJay = new Bird();
+
+            blueJay.Name = "Blue Jay";
+            blueJay.Color = "Blue";
+            blueJay.Sightings = 1;
+
+            // now add the birb
+            birds.Add(blueJay);
+
+            foreach (Bird bird in birds)
+            {
+                Console.WriteLine("All birds: {0}", bird.Name);
+            }
+
         }
 
         /// <summary>
@@ -70,5 +103,13 @@ namespace C_Sharp_Intermediate
 
             return lessThanFive;
         }
-   } 
+    }
+
+    public class Bird
+    {
+        public string Name { get; set; }
+        public string Color { get; set; }
+        public int Sightings { get; set; }
+    }
+
 }
